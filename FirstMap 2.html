@@ -1,0 +1,122 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>FirstMap</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      h2,
+      h3 {
+        margin: 10px;
+        font-size: 18px;
+      }
+      h3 {
+        font-size: 16px;
+      }
+      p {
+        margin: 10px;
+      }
+      .map-overlay {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: #fff;
+        margin-right: 20px;
+        font-family: Arial, sans-serif;
+        overflow: auto;
+        border-radius: 3px;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+      #features {
+        top: 0;
+        height: 100px;
+        margin-top: 20px;
+        width: 250px;
+      }
+      #legend {
+        padding: 10px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        line-height: 18px;
+        height: 150px;
+        margin-bottom: 40px;
+        width: 100px;
+      }
+      .legend-key {
+        display: inline-block;
+        border-radius: 20%;
+        width: 10px;
+        height: 10px;
+        margin-right: 5px;
+      }
+    </style>
+   <script src="https://js.sentry-cdn.com/9c5feb5b248b49f79a585804c259febc.min.js" crossorigin="anonymous"></script>
+    </head>
+  <body>
+    <div id="map" class="mapboxgl-map">
+	<div class="mapboxgl-canary" style="visibility: hidden;"></div>
+	<div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate">
+	<canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" role="region" width="1227" height="880" style="width: 981.6px; height: 703.2px;"></canvas>
+	</div>
+	<div class="mapboxgl-control-container">
+	<div class="mapboxgl-ctrl-top-left"></div>
+	<div class="mapboxgl-ctrl-top-right"></div>
+	<div class="mapboxgl-ctrl-bottom-left">
+	<div class="mapboxgl-ctrl" style="display: block;">
+	<a class="mapboxgl-ctrl-logo" target="_blank" rel="noopener nofollow" href="https://www.mapbox.com/" aria-label="Mapbox logo"></a></div>
+
+
+  </div>
+	</div></div>
+
+    <div class="map-overlay" id="features">
+      <h2>Residency Less Than 2 Years</h2>
+      <div id="pd"><p>2021 Census Data by LSOA</p></div>
+    </div>
+    <div class="map-overlay" id="legend"></div>
+
+    <script>
+      // define access token
+      mapboxgl.accessToken = 'pk.eyJ1IjoiYXBpY2Nhcm9naXMiLCJhIjoiY2xidXo1YW9iMXE4MTN2bXZ4ZW0xaTR5dyJ9.8tcFuaeUc5MY4ATH5ra07Q';
+
+      //create map
+      const map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/apiccarogis/clbuxq2bj002814qkmetoxzz8' // map style URL from Mapbox Studio
+      });
+
+      map.on('load', () => {
+        // the rest of the code will go in here
+
+        const layers = [
+          '0-50',
+          '50-100',
+          '100-250',
+          '250-500',
+          '500+',
+
+        ];
+        const colors = [
+          '#FFEDA0',
+          '#FEB24C',
+          '#FD8D3C',
+          '#E31A1C',
+          '#800026'
+        ];
+
+      });
+
+
+    </script>
+
+
+</body></html>
