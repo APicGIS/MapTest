@@ -1,2 +1,2 @@
 # MapTest
-Test Environemtn for Web Mapping
+Test Environment for Web Mapping
